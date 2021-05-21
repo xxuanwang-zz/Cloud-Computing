@@ -1,0 +1,31 @@
+- Try s3tester.py to see how it works (steps are given below)
+- Update s3tester.py to include additional tests
+- You can include point calculation as part of s3tester.py.
+  Sample tests show how to do this.
+
+Attached files:
+- s3tester.py
+- requirements.txt
+
+Testing steps:
+
+1. mkdir assignment1-grading
+2. cp requirements.txt assignment1-grading/.
+3. cd assignment1-grading
+4. python3 -m venv venv
+5. source venv/bin/activate
+6. pip3 install -r requirements.txt
+
+For each student, do following from inside assignment1-grading directory:
+
+a. git clone repo
+b. cp s3tester.py into <repo-dir>
+c. cd <repo-dir>
+d. python s3tester.py <student-name>
+   - This will print output on the screen
+e. python s3tester.py <student-name> > output.txt
+   - This will save output to output.txt
+f. Verify the output from output.txt to spot check for any issues with
+    the test code itself. 
+g. Check date of first commit (3 points):
+   git log --pretty=format:"%h%x09%an%x09%ad%x09%s"

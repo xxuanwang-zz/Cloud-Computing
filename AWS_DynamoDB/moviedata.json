@@ -1,0 +1,144 @@
+[
+    {
+        "year": 2013,
+        "title": "Rush",
+        "info": {
+            "directors": ["Ron Howard"],
+            "release_date": "2013-09-02T00:00:00Z",
+            "rating": 8.3,
+            "genres": [
+                "Action",
+                "Biography",
+                "Drama",
+                "Sport"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg",
+            "plot": "A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda.",
+            "rank": 2,
+            "running_time_secs": 7380,
+            "actors": [
+                "Daniel Bruhl",
+                "Chris Hemsworth",
+                "Olivia Wilde"
+            ]
+        }
+    },
+    {
+        "year": 2015,
+        "title": "Rush",
+        "info": {
+            "directors": ["Ron Howard"],
+            "release_date": "2015-09-01T00:00:00Z",
+            "rating": 7.9,
+            "genres": [
+                "Action",
+                "Biography",
+                "Drama",
+                "Sport"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg",
+            "plot": "A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda.",
+            "rank": 2,
+            "running_time_secs": 7380,
+            "actors": [
+                "Daniel Bruhl",
+                "Chris Hemsworth",
+                "Olivia Wilde"
+            ]
+        }
+    },
+    {
+        "year": 2013,
+        "title": "The Hunger Games: Catching Fire",
+        "info": {
+            "directors": ["Francis Lawrence"],
+            "release_date": "2013-11-11T00:00:00Z",
+            "rating": 5.2,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Sci-Fi",
+                "Thriller"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTAyMjQ3OTAxMzNeQTJeQWpwZ15BbWU4MDU0NzA1MzAx._V1_SX400_.jpg",
+            "plot": "Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.",
+            "rank": 4,
+            "running_time_secs": 8760,
+            "actors": [
+                "Jennifer Lawrence",
+                "Josh Hutcherson",
+                "Liam Hemsworth"
+            ]
+        }
+    },
+    {
+        "year": 2013,
+        "title": "Thor: The Dark World",
+        "info": {
+            "directors": ["Alan Taylor"],
+            "release_date": "2013-10-30T00:00:00Z",
+            "rating": 6.9,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQyNzAwOTUxOF5BMl5BanBnXkFtZTcwMTE0OTc5OQ@@._V1_SX400_.jpg",
+            "plot": "Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.",
+            "rank": 5,
+            "actors": [
+                "Chris Hemsworth",
+                "Natalie Portman",
+                "Tom Hiddleston"
+            ]
+        }
+    },
+    {
+        "year": 2004,
+        "title": "Little Black Book",
+        "info": {
+            "directors": ["Nick Hurran"],
+            "release_date": "2004-08-06T00:00:00Z",
+            "rating": 3.1,
+            "genres": [
+                "Comedy",
+                "Romance",
+                "Drama"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTY0ODczNzM4OV5BMl5BanBnXkFtZTcwNzcyMDUzMw@@._V1_SX400_.jpg",
+            "plot": "A woman snoops through her boyfriend's palm pilot and reveals his former girlfriends, which causes her to question why they're still listed in his little black book.",
+            "rank": 5000,
+            "running_time_secs": 6660,
+            "actors": [
+                "Brittany Murphy",
+                "Ron Livingston",
+                "Holly Hunter"
+            ]
+        }
+    },
+    {
+        "year" : 2013,
+        "title" : "Turn It Down!",
+        "info" : {
+            "directors" : [
+                "Alice Smith",
+                "Bob Jones"
+            ],
+            "release_date" : "2013-01-18T00:00:00Z",
+            "rating" : 9.2,
+            "genres" : [
+                "Comedy",
+                "Drama"
+            ],
+            "image_url" : "http://ia.media-imdb.com/images/N/O9ERWAU7FS797AJ7LU8HN09AMUP908RLlo5JF90EWR7LJKQ7@@._V1_SX400_.jpg",
+            "plot" : "A rock band plays their music at high volumes, annoying the neighbors.",
+            "rank" : 11,
+            "running_time_secs" : 5215,
+            "actors" : [
+                "David Matthewman",
+                "Ann Thomas",
+                "Jonathan G. Neff"
+           ]
+        }
+    }
+]
