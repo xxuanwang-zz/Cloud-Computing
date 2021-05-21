@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: hello-world 
+  template:
+    metadata:
+      labels:
+        app: hello-world 
+    spec:
+      containers:
+      - name: hello-world 
+        image: gcr.io/cloudark-kubeplus/helloworld:latest
+        imagePullPolicy: Always # Only for Minikube; Otherwise set to Always
+        ports:
+        - containerPort: 5000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world-service
+spec:
+  selector:
+    app: hello-world 
+  ports:
+  - protocol: TCP
+    port: 5000 
+    targetPort: 5000
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: hello-world-ip
+spec:
+  backend:
+    serviceName: hello-world-service 
+    servicePort: 5000
+ 
