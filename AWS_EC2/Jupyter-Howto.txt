@@ -1,0 +1,82 @@
+I followed the Document by Alex Sanchez to get jupyter running on an EC2 instance
+https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
+
+0. First launch an EC2 instance and make sure:
+   a. You choose a free tier Amazon Linux OS for the AMI
+   b. You open port 8888 on it where the jupyter notebook server runs
+
+(Step0 is already done for you when choose the AMI and the security group)
+
+1. Login to your EC2 instance using ssh:
+      $ ssh -i "itegrp-key.pem" ec2-user@<Your_instance_public_dns_name>
+   where <Your_instance_public_dns_name> is the IP address you got from your instance:
+      $ aws ec2 describe-instances --filters Name=tag-value,Values=<YourInstanceName> | grep PublicDnsName 
+
+2. Install anaconda which comes with jupyter
+    $ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+    $ bash Anaconda3-5.2.0-Linux-x86_64.sh
+   Choose to add anaconda to your PATH; This will modify your .bashrc for future
+   
+3. Confirm it:
+    $ more ~/.bashrc
+   Note that the PATH is not set now though:
+    $ echo $PATH
+   Set it for current session:
+    $ export PATH="/home/ec2-user/anaconda3/bin:$PATH"
+   Confirm that it works:
+    $ echo $PATH
+    $ which python
+    $which pip
+	
+4. Configure jupyter to be accessible using a password:
+    $ ipython
+   You are now inside ipython
+    Type in the following inside ipython:
+		In [1]: from IPython.lib import passwd
+		In [2]: passwd()
+		Enter Password: *****
+		Verify Password: *****
+		Out[2]: 'sha1:<a long string that has your encrypted password>'
+        In [3]: exit
+	Make a note of the password and the hash
+	
+5. Configure Jupyter/Ipython server to access your notebooks via your internet browser.
+    Create a default config file: ".jupyter/jupyter_notebook_config.py" 
+	 $ jupyter notebook --generate-config
+     $ mkdir certs
+     $ cd certs
+     $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+    This will create a file called "mycert.pem" inside the certs folder
+    Now edit the config file
+	 $ cd ..
+     $ vim .jupyter/jupyter_notebook_config.py
+	Cut-and-paste this:
+	            c = get_config()
+
+				# Kernel config
+				c.IPKernelApp.pylab = 'inline'  # if you want plotting support always in your notebook
+
+				# Notebook config
+				c.NotebookApp.certfile = u'/home/ec2-user/certs/mycert.pem' #location of your certificate file
+				c.NotebookApp.ip = '*'
+				c.NotebookApp.open_browser = False  #so that the ipython notebook does not open up a browser by default
+				c.NotebookApp.password = u'sha1:262....your hash here.........65f'  #edit this with the SHA hash that you generated
+				# This is the port we opened up in the EC2 instance
+				c.NotebookApp.port = 8888
+	Make sure the hash is the one you saved before in step 4
+	
+6. Now we  are ready to run the jupyter notebook server
+    $ mkdir notebooks
+    $ cd notebooks
+    $ jupyter notebook
+	
+7. Assuming your EC2's instance is running at IP address: Open this URL in Browser now:
+           https://<Your_instance_public_dns_name>:8888/
+    ***It is possible your browser will complain first about the site being untrusted 
+	   (Follow the advanced button and add the site to your exception list)
+	You will be  presented with a login screen asking you for a password. (enter the password you created in Step4 above)
+
+You are set!!!! 
+	
+   
+
